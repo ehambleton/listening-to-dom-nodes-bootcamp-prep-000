@@ -23,15 +23,15 @@
     <br />
 
     <div>
-      1
+      one
       <div>
-        2
+        two
         <div>
-          3
+        three
           <div>
-            4
+            four
             <div>
-              5
+              five
             </div>
           </div>
         </div>
@@ -39,3 +39,26 @@
     </div>
   </body>
 </html>
+
+<script>
+const divs = document.querySelectorAll('div')
+
+function bubble(e) {
+  // stop! that! propagation!
+  e.stopPropagation()
+
+  alert(this.firstChild.nodeValue.trim() + ' bubbled')
+}
+
+for (let i = 0; i < divs.length; i++) {
+  divs[i].addEventListener('click', bubble)
+}
+</script>
+
+<script>
+const input = document.querySelector('input')
+
+input.addEventListener('keydown', function(e) {
+  alert(e.which)
+})
+</script>
